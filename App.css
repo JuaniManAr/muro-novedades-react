@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f2f5;
+  color: #1c1e21;
+  min-height: 100vh;
+}
+
+/* ─── Layout ─── */
+.app-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+.app-header {
+  text-align: center;
+  padding: 32px 0 16px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  color: #1877f2;
+}
+
+.app-subtitle {
+  color: #65676b;
+  margin-top: 6px;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Formulario ─── */
+.formulario-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
+}
+
+.formulario-container h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #050505;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  font-size: .85rem;
+  font-weight: 600;
+  color: #65676b;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid #ccd0d5;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color .15s;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1877f2;
+  box-shadow: 0 0 0 3px rgba(24,119,242,.15);
+}
+
+.form-error {
+  background: #fff0f0;
+  border: 1px solid #ffb3b3;
+  color: #c0392b;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: .9rem;
+  margin-bottom: 14px;
+}
+
+.btn-publicar {
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, transform .1s;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.btn-publicar:hover { background: #166fe5; }
+.btn-publicar:active { transform: scale(.98); }
+
+/* ─── Sección de publicaciones ─── */
+.publicaciones-section h2 {
+  font-size: 1.1rem;
+  color: #65676b;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.contador {
+  font-size: .95rem;
+  color: #90949c;
+}
+
+/* ─── Tarjeta publicación ─── */
+.publicacion {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
+  transition: box-shadow .2s;
+}
+
+.publicacion:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,.16);
+}
+
+.publicacion-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.publicacion-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1877f2, #42b72a);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.publicacion-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.publicacion-autor {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.publicacion-fecha {
+  font-size: .8rem;
+  color: #90949c;
+}
+
+.publicacion-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.publicacion-contenido {
+  color: #3d3d3d;
+  line-height: 1.6;
+  font-size: .97rem;
+}
+
+.publicacion-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f2f5;
+}
+
+.btn-like {
+  background: none;
+  border: 1px solid #ccd0d5;
+  border-radius: 6px;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: .9rem;
+  color: #65676b;
+  font-weight: 500;
+  transition: all .15s;
+}
+
+.btn-like:hover {
+  background: #f0f2f5;
+  border-color: #1877f2;
+  color: #1877f2;
+}
+
+.btn-like.liked {
+  background: #e7f3ff;
+  border-color: #1877f2;
+  color: #1877f2;
+}
+
+/* ─── Estados de carga / error / vacío ─── */
+.status-msg {
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.status-msg.loading { color: #65676b; }
+.status-msg.error   { color: #c0392b; }
+.status-msg.empty   { color: #65676b; }
